@@ -2,7 +2,7 @@ import { observer } from "mobx-react-lite";
 import { modelSettingsStore } from "@/entities/model/model/modelSettingsStore";
 
 export const ModelSettingsPanel = observer(() => {
-  const { rotation, scale, color } = modelSettingsStore;
+  const { rotation, scale } = modelSettingsStore;
 
   return (
     <div style={{ marginBottom: 16, display: "flex", gap: 16 }}>

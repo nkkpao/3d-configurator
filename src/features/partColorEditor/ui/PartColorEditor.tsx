@@ -1,7 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { partColorStore } from "@/entities/model/model/partColorStore";
 import { modelStore } from "@/entities/model/model/modelStore";
-import React from "react";
 
 export const PartColorEditor = observer(() => {
   const model = modelStore.selectedModel;

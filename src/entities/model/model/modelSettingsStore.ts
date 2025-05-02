@@ -1,5 +1,4 @@
 import { makeAutoObservable } from "mobx";
-import { modelStore } from "./modelStore";
 
 export class ModelSettingsStore {
   color = "#ffffff";
