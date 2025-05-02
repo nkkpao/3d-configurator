@@ -42,6 +42,11 @@ class PartColorStore {
       this.colors[modelId] = {};
     });
   }
+
+  resetAll() {
+    this.colors = {};
+    this.currentModelId = null;
+  }
 }
 
 export const partColorStore = new PartColorStore();

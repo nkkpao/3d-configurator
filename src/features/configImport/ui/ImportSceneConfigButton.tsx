@@ -16,6 +16,9 @@ export const ImportSceneConfigButton = observer(() => {
     if (!file) return;
 
     try {
+      modelStore.resetAll();
+      partColorStore.resetAll();
+
       const zip = await JSZip.loadAsync(file);
       const jsonFile = zip.file("scene.json");
       if (!jsonFile) {
