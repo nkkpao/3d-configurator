@@ -1,54 +1,40 @@
-# React + TypeScript + Vite
+# 3D Scene Configurator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Полноценный 3D-конфигуратор моделей на базе **React**, **Three.js**, **MobX** и **Vite**.  
+Проект поддерживает загрузку, редактирование, экспорт и импорт сцен с сохранением всех параметров и внешнего вида.
 
-Currently, two official plugins are available:
+## Возможности
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Загрузка `.glb/.gltf` моделей через drag-n-drop или через интерфейс
+- Управление трансформацией каждой модели (позиция, вращение, масштаб)
+- Изменение цветов отдельных частей модели
+- Поддержка нескольких объектов на сцене одновременно
+- Экспорт и импорт всей сцены в `.zip`, включая:
+  - Конфигурацию (`scene.json`)
+  - Все модели (`.glb`)
+- Экспорт отдельных моделей с сохранёнными цветами
+- Клонирование моделей
+- Удаление моделей
+- Панель со списком всех моделей в сцене
+- Выделение выбранной модели с визуальной обводкой
+- Реактивность на основе `mobx` + строгий режим
 
-## Expanding the ESLint configuration
+## Стек технологий
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React 18](https://react.dev)
+- [Three.js](https://threejs.org/)
+- [@react-three/fiber](https://github.com/pmndrs/react-three-fiber)
+- [MobX](https://mobx.js.org/)
+- [Vite](https://vitejs.dev/)
+- [JSZip](https://stuk.github.io/jszip/) — для упаковки/распаковки сцены
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Запуск проекта
+
+```bash
+git clone https://github.com/nkkpao/3d-configurator.git
+cd 3d-configurator
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/nkkpao/3d-configurator)
