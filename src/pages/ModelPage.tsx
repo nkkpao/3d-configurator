@@ -69,7 +69,7 @@ export const ModelPage = observer(() => {
           </div>
         ) : (
           <div style={{ opacity: 0.5, textAlign: "center", marginTop: 32 }}>
-            Выберите модель для редактирования
+            Выберите glb модель для редактирования
           </div>
         )}
       </div>
